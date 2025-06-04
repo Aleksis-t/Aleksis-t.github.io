@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kursa izvēle</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Izvēles ceļvedis</h1>
+        <div class="theme-toggle-wrapper desktop-only">
+          <label class="switch">
+            <input type="checkbox" id="theme-toggle">
+            <span class="slider">
+              <span class="icon sun">☀️</span>
+              <span class="icon moon">🌙</span>
+            </span>
+          </label>
+        </div>
+      
+        <button class="menu-toggle mobile-only" id="menu-toggle">&#9776;</button>
+      </header>
+      
+      <nav class="desktop-only">
+        <a href="index.html">Sākums</a>
+        <a href="kursa-izvele.html" class="active">Kursa izvēle</a>
+        <a href="motivacija.html">Motivācija</a>
+        <a href="studiju-vide.html">Studiju vide</a>
+        <a href="praktiska-pieredze.html">Praktiskā pieredze</a>
+      </nav>
+      
+      <div class="mobile-menu" id="mobile-menu">
+        <a href="index.html">Sākums</a>
+        <a href="kursa-izvele.html" class="active">Kursa izvēle</a>
+        <a href="motivacija.html">Motivācija</a>
+        <a href="studiju-vide.html" >Studiju vide</a>
+        <a href="praktiska-pieredze.html">Praktiskā pieredze</a>
+      
+        <div class="mobile-theme-toggle">
+          <label class="switch">
+            <input type="checkbox" id="mobile-theme-toggle">
+            <span class="slider">
+              <span class="icon">☀️</span>
+              <span class="icon">🌙</span>
+            </span>
+          </label>
+        </div>
+      </div>
+
+  <section class="section">
+    <div class="content-wrapper">
+        <img src="kursi.jpg" alt="Kursa izvēle">
+        <div class="text">
+        <h3>Kā izvēlēties pareizo kursu?</h3>
+        <p>Izvēloties studiju kursu, ir būtiski apsvērt savas intereses, spējas un nākotnes ieceres. Daudzi studenti sāk ar iecienītām jomām vai priekšmetiem, kas viņus jau ir aizrāvuši skolā. Ir ieteicams rūpīgi izpētīt programmu saturu, uzklausīt padomus no citiem kursa biedriem un iepazīties ar absolventu pieredzi. Neaizmirstiet arī izvērtēt karjeras iespējas, ko attiecīgā joma sniedz nākotnē. Šāda pieeja palīdz pieņemt pareizu lēmumu.</p>
+        </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Aleksis Tukišs | "Mans studiju izvēles ceļvedis"</p>
+  </footer>
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const mobileToggle = document.getElementById('mobile-theme-toggle');
+    const mobileMenuBtn = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+  
+    function applyTheme(isDark) {
+      document.body.classList.toggle('dark-mode', isDark);
+      themeToggle.checked = isDark;
+      mobileToggle.checked = isDark;
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    }
+  
+    themeToggle.addEventListener('change', () => applyTheme(themeToggle.checked));
+    mobileToggle.addEventListener('change', () => applyTheme(mobileToggle.checked));
+    mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark') applyTheme(true);
+  </script>  
+</body>
+</html>
