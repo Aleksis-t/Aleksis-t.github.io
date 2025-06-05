@@ -349,7 +349,7 @@ html, body {
   }
   
   .hero {
-    background-image: url('sakums.jpg'); /* your image path */
+    background-image: url('sakums.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -384,7 +384,7 @@ html, body {
   }
   
   .hero-content h3 {
-    font-size: 3rem; /* BIGGER title */
+    font-size: 3rem;
     margin-bottom: 1rem;
     color: white;
     font-weight: 800;
